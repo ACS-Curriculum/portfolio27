@@ -1,0 +1,107 @@
+<!--
+pyp5js
+Copyright (C) 2019-2021 Bernardo Fontes
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<!DOCTYPE html>
+
+<!-- pyp5js index.html boilerplate -->
+<html lang="">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>try_again - pyp5js</title>
+  <style>
+    body,
+    html,
+    canvas {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    html {
+      overflow-y: scroll;
+      overflow-x: scroll;
+    }
+
+    .demoContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    pre {
+      padding-left: 2em;
+    }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+  <script src="target/target_sketch.js" type="module"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  <p style="background-color: #f6f8fa">
+    Python code <a href="https://github.com/berinhard/pyp5js/blob/develop/docs/examples/transcrypt/sketch_003"
+      target="_blank">here</a>.
+  </p>
+
+  <div class="demoContainer">
+    <div id="sketch-holder" style="">
+      <!-- You sketch will go here! -->
+    </div>
+
+    <div style="">
+      <pre>
+           <code>
+            def setup():
+            createCanvas(600, 600) 
+            #no_smooth()
+          
+          
+          def draw() :
+            background (253) 
+            strokeWeight(2)
+            
+            nRectangles = 14
+            offset = 50
+            w = (width-offset*2)/nRectangles
+            
+            for i in range(0, nRectangles):
+              #finds the x and y value of the current rectangle
+              x0 = offset + i * w
+              y0 = height-offset
+            
+              #increases the rectangle height by 25
+              rectH = (i+1) * w
+              #creates a color gradient by making fill dependent on i
+              fill(i* (255.0/nRectangles))
+              #draws the current rectangle
+              rect(x0, y0, w, -rectH)
+
+            </code>
+        </pre>
+    </div>
+
+  </div>
+</body>
+
+</html>
